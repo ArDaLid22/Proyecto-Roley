@@ -18,14 +18,14 @@
                         <div class="card-body">
                             <h3>Inicia Sesión</h3>
                             <hr />
-                            <form>
+                            <form action="/bd/loginAdmin.php" method="post">
                                 <div class="form-group">
                                     <label>Dirección de Correo Electrónico</label>
-                                    <input type="email" class="form-control" placeholder="Correo">
+                                    <input type="email" class="form-control" placeholder="Correo" id="emailID" name="emailID">
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña</label>
-                                    <input type="password" class="form-control" placeholder="Contraseña">
+                                    <input type="password" class="form-control" placeholder="Contraseña" id="passID" name="passID">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Ingresar</button>
                             </form>
