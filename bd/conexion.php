@@ -1,11 +1,11 @@
 <?php
-$host ="localhost";
-$usuario= "root";
-$clave="123";
-$bd="roleyDB";
-$conexion=mysqli_connect($host,$usuario,$clave,$bd);
-/*if($conexion){
-	echo "conectado correctamente";
-}else{
-	echo "no se pudo conectar";}*/
+function conectarDB() {
+    $user = "root";
+    $pass = "";
+    $server = "localhost";
+    $db = "roleyDB";
+    $conexion = mysql_connect($server, $user, $pass) or die ("ERROR: ".mysql_error());
+    mysql_select_db($db, $conexion);
+    return $conexion;
+}
 ?>
