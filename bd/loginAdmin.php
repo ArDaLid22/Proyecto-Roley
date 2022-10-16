@@ -9,17 +9,16 @@ if (!$conexion) {
     die("No hay conexión: ".mysqli_connect_error());
 }
 
-$fuser = $_POST["emailID"];
-$fpass = $_POST["passID"];
+$user = $_POST["emailID"];
+$pass = $_POST["passID"];
 
-$query = mysqli_query($conexion, "SELECT * FROM admin WHERE correo = '".$fuser."' AND contraseña = '".$fpass."'");
+$query = mysqli_query($conexion, "SELECT * FROM admin WHERE correo = '".$user."' AND contraseña = '".$pass."'");
 $nr = mysqli_num_rows($query);
 
 if ($nr == 1) {
-	//header("Location: menuAdmin.php")
-	echo "Bienvenido: ".$fuser;
+	header("Location: ../admin/menuAdmin.php");
 } else {
-	echo "No ingreso";
+	header("Location: ../admin/index.html");
 }
 
 ?>

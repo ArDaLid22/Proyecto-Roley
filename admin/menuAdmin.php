@@ -11,6 +11,6 @@
         <script src="https://kit.fontawesome.com/8ef4f0069f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-                            <h3>Ingresaste</h3>
+                            <h3>Ingresaste al menu del admin</h3>
     </body>
 </html>
