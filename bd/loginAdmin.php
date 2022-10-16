@@ -1,18 +1,25 @@
 <?php
-session_start();
-require 'conexion.php';
-session_start();
-$correo = $_POST['emailID'];
-$clave = $_POST['passID'];
-$q ="SELECT COUNT(*) AS contar FROM admin WHERE correo='$correo' AND contraseña='$clave'";
-$consulta= mysqli_query($conexion,$q);
-$array= mysqli_fetch_array($consulta);
-if($array['contar']>0){	
-	$_SESSION['username'] =$correo;
-	//$_SESSION['idMail'] =$correo;
-	header("location: ../admin/menuAdmin.php");
+$dbuser = "root";
+$dbpass = "";
+$dbhost = "localhost";
+$dbname = "roleyDB";
+
+$conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+if (!$conexion) {
+    die("No hay conexión: ".mysqli_connect_error());
 }
-else{
-	echo "HAZ INGRESADO MAL TU CONTRASEÑA";
+
+$fuser = $_POST["emailID"];
+$fpass = $_POST["passID"];
+
+$query = mysqli_query($conexion, "SELECT * FROM admin WHERE correo = '".$fuser."' AND contraseña = '".$fpass."'");
+$nr = mysqli_num_rows($query);
+
+if ($nr == 1) {
+	//header("Location: menuAdmin.php")
+	echo "Bienvenido: ".$fuser;
+} else {
+	echo "No ingreso";
 }
+
 ?>
