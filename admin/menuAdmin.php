@@ -81,7 +81,7 @@
                             <th><?= $datos->nombre ?></th>
                             <th><?= $datos->categoriaID ?></th>
                             <th><?= $datos->descripcion ?></th>
-                            <th><img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>"></th>
+                            <th><img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" style="max-height: 100px"></th>
                             <th><?= $datos->stock ?></th>
                             <th><?= $datos->precio ?></th>
                             <th><?= $datos->estadoID ?></th>

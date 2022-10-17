@@ -5,7 +5,7 @@
 	<title>Roley Store</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/all.css">
+	<!--link rel="stylesheet" href="css/all.css"-->
 	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
 </head>
 
@@ -30,7 +30,6 @@
 				<li class="nav-item">
 					<a class="nav-link" href="store/contacto.php">Contáctanos</a>
 				</li>
-				<li class="nav-item"><i class="fas fa-camera"></i></li>
 			</ul>
 		</div>
 	</div>
@@ -67,11 +66,11 @@
 	<div class="container text-center">
 		<div class="row">
 			<?php
-				include "admin/conexion.php";
+				include "bd/conexion.php";
 				$sql = $conexion->query("select * from producto");
 				while ($datos = $sql->fetch_object()) { ?>
 					 <div class="col-4 py-2">
-						<img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>">
+						<img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" class="img-thumbnail">
 						<p><?= $datos->nombre ?></p>
 						<p><?= $datos->descripcion ?></p>
 						</div>
@@ -86,11 +85,11 @@
 			<div class="row justify-content-between">
 				<div class="col-4">
 					<div class="h5">Nuestras redes</div>
-					<a href="https://www.instagram.com/roley_peru/" target="_blank"><img src="imagenes/RedesSociales.gif" class="w-50"></a>
+					<a href="https://www.instagram.com/roley_peru/" target="_blank"><img src="iconos/instagram.png" class="w-25"></a>
 				</div>
 				<div class="col-4">
 					<div class="h5">Contáctanos</div>
-					<a href="https://api.whatsapp.com/send?phone=51994964790&text=Hola,%20quiero%20consultar%20los%20productos." target="_blank"><img src="https://static.whatsapp.net/rsrc.php/ym/r/36B424nhiL4.svg" class="w-50"></a>
+					<a href="https://api.whatsapp.com/send?phone=51994964790&text=Hola,%20quiero%20consultar%20los%20productos." target="_blank"><img src="iconos/whatsapp.png" class="w-25"></a>
 				</div>
 			</div>
 		</div>
