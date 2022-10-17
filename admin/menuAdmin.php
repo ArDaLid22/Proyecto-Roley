@@ -87,7 +87,6 @@
                             <th><?= $datos->estadoID ?></th>
                             <th><a href="actualizar.php?id=<?php echo $d['productoID'] ?>" class="btn btn-info">Editar</a></th>
                             <th><a href="delete.php?id=<?php echo $d['productoID'] ?>" class="btn btn-danger">Eliminar</a></th>
-
                         </tr>
                     <?php }
 
