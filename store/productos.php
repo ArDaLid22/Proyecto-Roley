@@ -18,16 +18,16 @@
                     <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../store/productos.html">Productos</a>
+                    <a class="nav-link active" href="../store/productos.php">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../store/ofertas.html">Ofertas</a>
+                    <a class="nav-link" href="../store/ofertas.php">Ofertas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../store/nosotros.html">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../store/contacto.html">Contáctanos</a>
+                    <a class="nav-link" href="../store/contacto.php">Contáctanos</a>
                 </li>
             </ul>
         </div>
