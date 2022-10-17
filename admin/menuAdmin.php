@@ -11,28 +11,88 @@
         <script src="https://kit.fontawesome.com/8ef4f0069f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h3>Agregar productos</h3>
-                            <hr />
-                            <form method="post" action="../bd/loginAdmin.php">
-                                <div class="form-group">
-                                    <label>Dirección de Correo Electrónico</label>
-                                    <input type="email" class="form-control" placeholder="Correo" id="emailID" name="emailID">
-                                </div>
-                                <div class="form-group">
-                                    <label>Contraseña</label>
-                                    <input type="password" class="form-control" placeholder="Contraseña" id="passID" name="passID">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Ingresar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+    <h1 class="text-center">CRUD PRODUCTOS</h1>
+    <div class="container-fluid row">
+        <form class="col-4">
+            <h3 class="text-center p-3">Registro productos</h3>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">PRODCUTO ID</label>
+                <input type="text" class="form-control" name="productoid">
             </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">NOMBRE PRODUCTO</label>
+                <input type="text" class="form-control" name="nombreproducto">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">CATEGORIA ID</label>
+                <input type="text" class="form-control" name="categoriaid">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">DESCRIPCION</label>
+                <input type="text" class="form-control" name="descripcion">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">IMAGEN</label>
+                <input type="file" class="form-control" accept="image/*" name="imagen">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">STOCK</label>
+                <input type="text" class="form-control" name="stock">
+            </div>
+
+            <button type="submit" class="btn btn-primary" name="btnregistrar">Registrar</button>
+        </form>
+
+        <div class="col-8 p-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <tr>
+                        <th>ProductoID</th>
+                        <th>Nombre</th>
+                        <th>CategoriaID</th>
+                        <th>Descripcion</th>
+                        <th>Imagen</th>
+                        <th>Stock</th>
+                        <th>precio</th>
+                        <th>estadoID</th>
+                        <th></th>
+                        <th></th>
+                        
+
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody>
+  
+                    <?php
+                    include "conexion.php";
+                    $sql = $conexion->query("select * from producto");
+                    while ($datos = $sql->fetch_object()) { ?>
+
+                        <tr>
+                            <th><?= $datos->productoID ?></th>
+                            <th><?= $datos->nombre ?></th>
+                            <th><?= $datos->categoriaID ?></th>
+                            <th><?= $datos->descripcion ?></th>
+                            <th><img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>"></th>
+                            <th><?= $datos->stock ?></th>
+                            <th><?= $datos->precio ?></th>
+                            <th><?= $datos->estadoID ?></th>
+                            <th><a href="actualizar.php?id=<?php echo $row['productoID'] ?>" class="btn btn-info">Editar</a></th>
+                            <th><a href="delete.php?id=<?php echo $row['productoID'] ?>" class="btn btn-danger">Eliminar</a></th>  
+
+                        </tr>
+                    <?php }
+
+                    ?>
+                </tbody>
+            </table>
+
         </div>
-    </body>
+
+
+
+    </div>
+
 </html>
