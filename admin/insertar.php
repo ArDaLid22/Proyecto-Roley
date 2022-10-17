@@ -1,27 +1,26 @@
 <?php
-include('../bd/conexion.php');
-$con=conectar();
+include '../bd/conexion.php';
 
-$productoID = $_POST['productoID'];
+
 $nombre = $_POST['nombre'];
 $categoriaID = $_POST['categoriaID'];
 $descripcion = $_POST['descripcion'];
-$imagen = $_POST['imagen'];
+//$imagen = $_FILES['imagen']['name'];
 $stock = $_POST['stock'];
 $precio = $_POST['precio'];
 $estadoID = $_POST['estadoID'];
 
-$sql="INSERT INTO producto VALUES('$productoID','$nombre','$categoriaID','$descripcion','$imagen','$stock','$precio','$estadoID')";
-$query = mysqli_query($con,$sql);
 
+$imagen = $_FILES['imagen']['tmp_name'];
+$imgContenido = addslashes(file_get_contents($imagen));
+
+
+$sql="INSERT INTO producto(nombre,categoriaID,descripcion,imagen,stock,precio,estadoID) 
+VALUES('$nombre','$categoriaID','$descripcion','$imgContenido','$stock','$precio','$estadoID')";
+$query = mysqli_query($conexion,$sql) or die("error de registro");
 if($query){
-
-    Header("Location: menuAdmin.php");
-
+    header('Location:menuAdmin.php');
 }else{
-    echo 'nO INSerto';
+    echo "pipipi";
 }
-
 ?>
-
-

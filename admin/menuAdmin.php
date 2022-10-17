@@ -15,7 +15,7 @@
 <body>
     <h1 class="text-center">CRUD PRODUCTOS</h1>
     <div class="container-fluid row">
-        <form class="col-4" action="insertar2.php" method="POST" enctype="multipart/form-data">
+        <form class="col-4" action="insertar.php" method="POST" enctype="multipart/form-data">
             <h3 class="text-center p-3">Registro productos</h3>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">NOMBRE PRODUCTO</label>
