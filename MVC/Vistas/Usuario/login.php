@@ -8,7 +8,7 @@ include_once '../Menu/HeaderLogin.php';
 			<div class="container login-wrapper">
 				<div class="row justify-content-center">
 					<div class="col-md-6 text-center mb-5 login-wrapper">
-						<h2 class="heading-section">BIENVENIDOS A KIPOSH</h2>
+						<h2 class="heading-section">LOGIN</h2>
 					</div>
 				</div>
 				<div class="row justify-content-center">
@@ -28,9 +28,7 @@ include_once '../Menu/HeaderLogin.php';
 									
 									<button type="submit" class="form-control btn btn-primary submit px-3">INGRESAR</button>
 								</div>
-								<div class="form-group d-md-flex">
-				
-								
+								<div class="form-group d-md-flex">	
 									<p class="w-100 text-center" ><a href="../Controladores/UsuarioControlador.php?action=registrate">REGISTRATE</a></p>
 									<p class="w-100 text-center" href="REGISTRATE.html"><a href="">RECUPERAR CONTRASEÑA</a></p>
 

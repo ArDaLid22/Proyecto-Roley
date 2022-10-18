@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../Vistas/css/inicio.css">
     <link rel="stylesheet" href="../Vistas/css/fontello.css">
     <link rel="stylesheet" href="../Vistas/img/bg.jpg">
+    <link rel="stylesheet" href="../vistas/css/bootstrap.min.css">
     <script src="../Vistas/js/jquery-3.6.1.min"></script>
     <script src="../Vistas/js/jquery.validate.js"></script>
 </head>

@@ -10,7 +10,7 @@ include_once '../Menu/HeaderLogin.php';
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">KIPOSH</h2>
+					<h2 class="heading-section">ROLEY</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -29,7 +29,7 @@ include_once '../Menu/HeaderLogin.php';
 								<input type="text" class="form-control" placeholder="Usuario"  name="usuario" id="usuario" required>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="CorSreo"  name="correo" id="correo" required>
+								<input type="text" class="form-control" placeholder="Correo"  name="correo" id="correo" required>
 							</div>		
 							<div class="form-group">
 								<input type="date" class="form-control" placeholder="Fecha"  name="fecharegistro" id="fecharegistro" required >
