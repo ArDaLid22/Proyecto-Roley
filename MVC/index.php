@@ -30,6 +30,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="../store/contacto.php">Contáctanos</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="Controladores/UsuarioControlador.php?action=login">Login</a>
+				</li><li class="nav-item">
+					<a class="nav-link" href="Controladores/UsuarioControlador.php?action=registrate">Registro</a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -94,6 +99,7 @@
 			</div>
 		</div>
 	</div>
+	
 
 </body>
 
