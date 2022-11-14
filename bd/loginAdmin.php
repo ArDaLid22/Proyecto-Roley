@@ -1,13 +1,5 @@
 <?php
-$dbuser = "root";
-$dbpass = "";
-$dbhost = "localhost";
-$dbname = "roleyDB";
-
-$conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if (!$conexion) {
-    die("No hay conexión: ".mysqli_connect_error());
-}
+require "conexion.php";
 
 $user = $_POST["emailID"];
 $pass = $_POST["passID"];
@@ -20,5 +12,4 @@ if ($nr == 1) {
 } else {
 	header("Location: ../admin/index.html");
 }
-
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 $dbuser = "root";
 $dbpass = "";
 $dbhost = "localhost";
@@ -10,6 +9,4 @@ if (!$conexion) {
     die("Error en la conexión con el servidor");
     
 }
-
- 
-
+?>
