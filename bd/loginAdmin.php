@@ -4,10 +4,10 @@ require "conexion.php";
 $user = $_POST["emailID"];
 $pass = $_POST["passID"];
 
-$query = mysqli_query($conexion, "SELECT * FROM admin WHERE correo = '".$user."' AND contraseña = '".$pass."'");
-$nr = mysqli_num_rows($query);
+$sql = "SELECT * FROM admin WHERE correo = '".$user."' AND contraseña = '".$pass."'";
+$result = $conexion->query($sql);
 
-if ($nr == 1) {
+if ($result->num_rows > 0) {
 	header("Location: ../admin/menuAdmin.php");
 } else {
 	header("Location: ../admin/index.html");

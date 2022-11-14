@@ -4,9 +4,9 @@ $dbpass = "";
 $dbhost = "localhost";
 $dbname = "roleyDB";
 
-$conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if (!$conexion) {
-    die("Error en la conexión con el servidor");
-    
+$conexion = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+if ($conexion->connect_error) {
+    die ("Conexion fallida: ".$conexion->connect_error);
 }
 ?>

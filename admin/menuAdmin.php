@@ -18,7 +18,7 @@
 <body>
     <h1 class="text-center">CRUD PRODUCTOS</h1>
     <div class="container-fluid row">
-        <form class="col-4" action="../bd/insertar.php" method="POST" enctype="multipart/form-data">
+        <form class="col-4" action="../bd/create.php" method="POST" enctype="multipart/form-data">
             <h3 class="text-center p-3">Registro productos</h3>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">NOMBRE PRODUCTO</label>
@@ -74,21 +74,24 @@
                 <tbody>
 
                     <?php
-                    include "../bd/conexion.php";
-                    $sql = $conexion->query("SELECT producto.productoID, producto.nombre AS prodName, categoria.nombre AS catName, producto.descripcion, producto.imagen, producto.stock, producto.precio, estado.nombre AS estName FROM producto INNER JOIN categoria ON producto.categoriaID = categoria.categoriaID INNER JOIN estado ON producto.estadoID = estado.estadoID;");
-                    while ($datos = $sql->fetch_object()) { ?>
+                    require "../bd/conexion.php";
+                    $sql = "SELECT producto.productoID, producto.nombre AS prodName, categoria.nombre AS catName, producto.descripcion, producto.imagen, producto.stock, producto.precio, estado.nombre AS estName FROM producto INNER JOIN categoria ON producto.categoriaID = categoria.categoriaID INNER JOIN estado ON producto.estadoID = estado.estadoID ORDER BY producto.productoID DESC";
+                    $result = $conexion->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                    ?>
 
                     <tr>
-                        <th><?= $datos->prodName ?></th>
-                        <th><?= $datos->catName ?></th>
-                        <th><?= $datos->descripcion ?></th>
-                        <th><img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" style="max-height: 100px"></th>
-                        <th><?= $datos->stock ?></th>
-                        <th><?= $datos->precio ?></th>
-                        <th><?= $datos->estName ?></th>
-                        <th><a href="actualizar.php?id=<?php echo $d['productoID'] ?>" class="btn btn-info">Editar</a></th>
-                        <th><a href="delete.php?id=<?php echo $d['productoID'] ?>" class="btn btn-danger">Eliminar</a></th>
+                        <th><?= $row['prodName'] ?></th>
+                        <th><?= $row['catName'] ?></th>
+                        <th><?= $row['descripcion'] ?></th>
+                        <th><img src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>" style="max-height: 100px"></th>
+                        <th><?= $row['stock'] ?></th>
+                        <th><?= $row['precio'] ?></th>
+                        <th><?= $row['estName'] ?></th>
+                        <th><a href="actualizar.php?id=<?php echo $row['productoID'] ?>" class="btn btn-info">Editar</a></th>
+                        <th><a href="../bd/delete.php?id=<?php echo $row['productoID'] ?>" class="btn btn-danger">Eliminar</a></th>
                     </tr>
+
                     <?php }
 
                     ?>
