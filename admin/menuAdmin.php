@@ -1,17 +1,10 @@
-<?php
-include "adminHeader.php";
-?>
+<?php include "adminHeader.php"; ?>
 
 <body>
-    <div class="container-fluid bg-dark">
-        <div class="container text-center">
-            <img src="../imagenes/logoAdmin.png" style="max-height: 50px;" class="my-3">
-        </div>
-    </div>
     <div class="container">
         <div class="row py-5">
             <div class="col-4 my-3">
-                <a href="#" style="text-decoration:none" class="text-reset">
+                <a href="adminProductos.php" style="text-decoration:none" class="text-reset">
                     <div class="card h-100">
                         <img src="../imagenes/adminProductos.png" class="card-img-top">
                         <div class="card-body">
@@ -22,7 +15,7 @@ include "adminHeader.php";
                 </a>
             </div>
             <div class="col-4 my-3">
-                <a href="#" style="text-decoration:none" class="text-reset">
+                <a href="adminPedidos.php" style="text-decoration:none" class="text-reset">
                     <div class="card h-100">
                         <img src="../imagenes/adminPedidos.png" class="card-img-top">
                         <div class="card-body">
@@ -33,7 +26,7 @@ include "adminHeader.php";
                 </a>
             </div>
             <div class="col-4 my-3">
-                <a href="#" style="text-decoration:none" class="text-reset">
+                <a href="adminClientes.php" style="text-decoration:none" class="text-reset">
                     <div class="card h-100">
                         <img src="../imagenes/adminClientes.png" class="card-img-top">
                         <div class="card-body">
@@ -44,7 +37,7 @@ include "adminHeader.php";
                 </a>
             </div>
             <div class="col-4 my-3">
-                <a href="#" style="text-decoration:none" class="text-reset">
+                <a href="adminMensajes.php" style="text-decoration:none" class="text-reset">
                     <div class="card h-100">
                         <img src="../imagenes/adminMensajes.png" class="card-img-top">
                         <div class="card-body">

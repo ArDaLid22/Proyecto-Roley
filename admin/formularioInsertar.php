@@ -1,12 +1,11 @@
 <!-- Formulario de registro producto -->
-<form class="col-4" action="../bd/create.php" method="POST" enctype="multipart/form-data">
-    <h3 class="text-center p-3">Registro productos</h3>
+<form class="col" action="../bd/create.php" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">NOMBRE PRODUCTO</label>
         <input type="text" class="form-control" name="nombre" id="nombre">
     </div>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">CATEGORIA ID</label>
+        <label for="exampleInputEmail1" class="form-label">CATEGORIA</label>
         <input type="number" class="form-control" name="categoriaID" id="categoriaID">
     </div>
     <div class="mb-3">
@@ -32,5 +31,5 @@
             <option value="3">Agotado</option>
         </select>
     </div>
-    <input type="submit" value="Registrar"></button>
+    <button type="submit" value="Registrar" class="btn btn-primary">Registrar</button>
 </form>

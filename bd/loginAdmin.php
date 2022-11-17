@@ -10,6 +10,6 @@ $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
 	header("Location: ../admin/menuAdmin.php");
 } else {
-	header("Location: ../admin/index.html");
+	header("Location: ../admin/index.php");
 }
 ?>

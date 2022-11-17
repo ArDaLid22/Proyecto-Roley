@@ -14,3 +14,9 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/8ef4f0069f.js" crossorigin="anonymous"></script>
 </head>
+
+<div class="container-fluid bg-dark">
+    <div class="container text-center">
+        <a href="menuAdmin.php"><img src="../imagenes/logoAdmin.png" style="max-height: 50px;" class="my-3"></a>
+    </div>
+</div>

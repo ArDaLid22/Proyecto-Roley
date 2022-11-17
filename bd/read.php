@@ -2,16 +2,16 @@
 require "../bd/conexion.php";
 ?>
 
-<table class="table table-hover">
-    <thead>
+<table class="table table-hover align-middle">
+    <thead class="table-dark">
         <tr>
             <th>Nombre</th>
-            <th>CategoriaID</th>
+            <th>Categoria</th>
             <th>Descripcion</th>
             <th>Imagen</th>
             <th>Stock</th>
-            <th>precio</th>
-            <th>estadoID</th>
+            <th>Precio</th>
+            <th>Estado</th>
             <th></th>
             <th></th>
         </tr>
@@ -32,7 +32,7 @@ require "../bd/conexion.php";
             <th><?= $row['stock'] ?></th>
             <th><?= $row['precio'] ?></th>
             <th><?= $row['estName'] ?></th>
-            <th><a href="actualizar.php?id=<?php echo $row['productoID'] ?>" class="btn btn-info">Editar</a></th>
+            <th><a href="actualizar.php?id=<?php echo $row['productoID'] ?>" class="btn btn-warning">Editar</a></th>
             <th><a href="../bd/delete.php?id=<?php echo $row['productoID'] ?>" class="btn btn-danger">Eliminar</a></th>
         </tr>
 

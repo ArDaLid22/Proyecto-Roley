@@ -13,7 +13,7 @@ $estadoID = $_POST['estadoID'];
 $sql = "INSERT INTO producto(nombre,categoriaID,descripcion,imagen,stock,precio,estadoID) VALUES('$nombre','$categoriaID','$descripcion','$imgContenido','$stock','$precio','$estadoID')";
 
 if ($conexion->query($sql) === TRUE) {
-    header("Location: ../admin/menuAdmin.php");
+    header("Location: ../admin/adminProductos.php");
 } else {
     echo "Error al registrar el producto".$conexion->error;
 }
