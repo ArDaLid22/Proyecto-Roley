@@ -1,64 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <title>RolayStore - Admin</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/8ef4f0069f.js" crossorigin="anonymous"></script>
-</head>
+<?php
+include "adminHeader.php";
+?>
 
 <body>
-    <h1 class="text-center">CRUD PRODUCTOS</h1>
-    <div class="container-fluid row">
-        <form class="col-4" action="../bd/create.php" method="POST" enctype="multipart/form-data">
-            <h3 class="text-center p-3">Registro productos</h3>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">NOMBRE PRODUCTO</label>
-                <input type="text" class="form-control" name="nombre" id="nombre">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">CATEGORIA ID</label>
-                <input type="number" class="form-control" name="categoriaID" id="categoriaID">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">DESCRIPCION</label>
-                <input type="text" class="form-control" name="descripcion" id="descripcion">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">IMAGEN</label>
-                <input type="file" class="form-control" accept="image/*" name="imagen" id="imagen">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">PRECIO</label>
-                <input type="number" class="form-control" name="precio" id="precio">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">STOCK</label>
-                <input type="number" class="form-control" name="stock" id="stock">
-            </div>
-            <div class="mb-3">
-                <select class="form-select" aria-label="Default select example" name="estadoID" id="estadoID">
-                    <option value="1">Regular</option>
-                    <option value="2">Oferta</option>
-                    <option value="3">Agotado</option>
-                </select>
-            </div>
-            <input type="submit" value="Registrar"></button>
-        </form>
-
-        <div class="col-8 p-4">
-            <?php
-            include "../bd/read.php";
-            ?>
+    <div class="container-fluid bg-dark">
+        <div class="container text-center">
+            <img src="../imagenes/logoAdmin.png" style="max-height: 50px;" class="my-3">
         </div>
     </div>
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-4 my-3">
+                <a href="#" style="text-decoration:none" class="text-reset">
+                    <div class="card h-100">
+                        <img src="../imagenes/adminProductos.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Productos</h5>
+                            <p class="card-text">Registra nuevos productos o modifica sus datos.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 my-3">
+                <a href="#" style="text-decoration:none" class="text-reset">
+                    <div class="card h-100">
+                        <img src="../imagenes/adminPedidos.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Pedidos</h5>
+                            <p class="card-text">Dale un vistazo a los pedidos realizados.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 my-3">
+                <a href="#" style="text-decoration:none" class="text-reset">
+                    <div class="card h-100">
+                        <img src="../imagenes/adminClientes.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Clientes</h5>
+                            <p class="card-text">Gestiona tu cartera de clientes.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4 my-3">
+                <a href="#" style="text-decoration:none" class="text-reset">
+                    <div class="card h-100">
+                        <img src="../imagenes/adminMensajes.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Mensajes</h5>
+                            <p class="card-text">Revisa los mensajes escritos por tus clientes.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>

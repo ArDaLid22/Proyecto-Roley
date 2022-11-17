@@ -37,43 +37,26 @@
     <div class="container">
 		<div class="h2 my-3">Hecha un vistazo a nuestras OFERTAS</div>
 	</div>
-	<div class="container text-center">
+	<div class="container bg-light">
 		<div class="row">
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
-			<div class="col-4 py-2">
-				<img src="../imagenes/productos.png" class="img-thumbnail">
-				<p>Name</p>
-				<p>Description</p>
-			</div>
+			<?php
+				include "../bd/conexion.php";
+				$sql = $conexion->query("select * from producto where estadoID='2'");
+				while ($datos = $sql->fetch_object()) { ?>
+					<div class="col-4 py-2">
+						<div class="card h-100">
+							<img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" class="img-card-top">
+							<div class="card-body">
+								<h5 class="card-title"><?= $datos->nombre ?></h5>
+								<p class="card-text"><?= $datos->descripcion ?></p>
+							</div>
+							<div class="card-footer">
+								<small>Precio: <?= $datos->precio ?></small>
+							</div>
+						</div>
+					</div>
+				<?php }
+			?>
 		</div>
 	</div>
 

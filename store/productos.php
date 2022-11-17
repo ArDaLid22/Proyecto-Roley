@@ -33,28 +33,32 @@
         </div>
     </div>
 
-    <!-- Los más vendidos -->
-        <div class="container">
-            <div class="h2 py-3">NUESTROS PRODUCTOS</div>
-        </div>
-        <div class="container text-center">
-            <div class="row">
-				<?php
+    <!-- Productos -->
+	<div class="container">
+		<div class="h2 my-3">Nuestros productos más vendidos</div>
+	</div>
+	<div class="container bg-light">
+		<div class="row">
+			<?php
 				include "../bd/conexion.php";
 				$sql = $conexion->query("select * from producto");
 				while ($datos = $sql->fetch_object()) { ?>
-					 <div class="col-4 py-2">
-						<img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" class="img-thumbnail">
-						<p><?= $datos->nombre ?></p>
-						<p><?= $datos->descripcion ?></p>
+					<div class="col-4 py-2">
+						<div class="card h-100">
+							<img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" class="img-card-top">
+							<div class="card-body">
+								<h5 class="card-title"><?= $datos->nombre ?></h5>
+								<p class="card-text"><?= $datos->descripcion ?></p>
+							</div>
+							<div class="card-footer">
+								<small>Precio: <?= $datos->precio ?></small>
+							</div>
 						</div>
+					</div>
 				<?php }
-				?>
-            
-            </div>
-        </div>
-        
-
+			?>
+		</div>
+	</div>
 
     <!-- Contacto -->
 	<div class="container-fluid" style="background-color: #e3f2fd;">
