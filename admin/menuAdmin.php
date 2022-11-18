@@ -31,7 +31,7 @@
                         <img src="../imagenes/adminClientes.png" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Clientes</h5>
-                            <p class="card-text">Gestiona tu cartera de clientes.</p>
+                            <p class="card-text">Visualiza tu cartera de clientes.</p>
                         </div>
                     </div>
                 </a>
