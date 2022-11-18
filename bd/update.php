@@ -14,7 +14,7 @@ $estadoID = $_POST['estadoID'];
 $sql = "UPDATE producto SET nombre='$nombre',categoriaID='$categoriaID', descripcion='$descripcion', imagen='$imgContenido', stock='$stock', precio='$precio', estadoID='$estadoID' WHERE productoID='$productoID'";
 
 if ($conexion->query($sql) === TRUE) {
-    header("Location: ../admin/menuAdmin.php");
+    header("Location: ../admin/adminProductos.php");
 } else {
     echo "Error al actualizar el producto".$conexion->error;
 }

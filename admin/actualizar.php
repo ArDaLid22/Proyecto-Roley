@@ -25,34 +25,34 @@ include "adminHeader.php";
     </div>
     <div class="container">
         <div class="row">
-            <div class="bg-warning bg-gradient bg-opacity-25 p-3 col-6 text-center">
+            <div class="bg-warning bg-gradient bg-opacity-25 p-3 col-6">
                 <p class="text-center fw-bold fs-5">Datos Actuales</p>
                 <p>
-                    <label>Nombre Producto</label><br>
+                    <label class="fw-bold">Nombre Producto</label><br>
                     <label><?= $col['prodName'] ?></label>
                 </p>
                 <p>
-                    <label>Categoria</label><br>
+                    <label class="fw-bold">Categoria</label><br>
                     <label><?= $col['catName'] ?></label>
                 </p>
                 <p>
-                    <label>Descripción</label><br>
+                    <label class="fw-bold">Descripción</label><br>
                     <label><?= $col['descripcion'] ?></label>
                 </p>
                 <p>
-                    <label>Imagen</label><br>
+                    <label class="fw-bold">Imagen</label><br>
                     <label><img src="data:image/jpg;base64, <?php echo base64_encode($col['imagen']); ?>" style="max-height: 180px"></label>
                 </p>
                 <p>
-                    <label>Precio</label><br>
+                    <label class="fw-bold">Precio</label><br>
                     <label><?= $col['precio'] ?></label>
                 </p>
                 <p>
-                    <label>Stock</label><br>
+                    <label class="fw-bold">Stock</label><br>
                     <label><?= $col['stock'] ?></label>
                 </p>
                 <p>
-                    <label>Estado</label><br>
+                    <label class="fw-bold">Estado</label><br>
                     <label><?= $col['estName'] ?></label>
                 </p>
             </div>
