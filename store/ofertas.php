@@ -24,7 +24,7 @@
                     <a class="nav-link active" href="../store/ofertas.php">Ofertas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../store/nosotros.html">Sobre Nosotros</a>
+                    <a class="nav-link" href="../store/nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../store/contacto.php">Contáctanos</a>
@@ -76,6 +76,9 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- ChatBot -->
+	<?php include "chatbot.php"; ?>
 
 </body>
 

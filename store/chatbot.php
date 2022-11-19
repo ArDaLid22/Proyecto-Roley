@@ -1,0 +1,1 @@
+<script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiNmZjg4MDAiLCJ3ZWIiOnsiYm90SWQiOiI2Mzc5NjA3NDQyNDY5YTAwYzM0NzI2ZjgiLCJ0aGVtZSI6IiNmZjg4MDAiLCJsYWJlbCI6IlJvbGV5IFN0b3JlIn0sIndlbGNvbWVUZXh0IjoiSE9MQSEifQ==" async defer></script>
