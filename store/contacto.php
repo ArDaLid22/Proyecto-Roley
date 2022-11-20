@@ -4,9 +4,7 @@
 <head>
     <title>Roley Store - Sobre Nosotros</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/8ef4f0069f.js" crossorigin="anonymous"></script>
+    <?php include "storeHeader.php"; ?>
 </head>
 
 <body>
@@ -39,13 +37,13 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Escríbenos</h5>
-                <form>
+                <form action="enviarMensaje.php" method="POST">
                     <div class="row g-3 justify-content-center py-3">
                         <div class="col-2 align-self-center">
                             <label>Nombre</label>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nombre" id="nombre">
                         </div>
                     </div>
                     <div class="row g-3 justify-content-center py-3">
@@ -53,7 +51,7 @@
                             <label>Número de contacto</label>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="numero" id="numero">
                         </div>
                     </div>
                     <div class="row g-3 justify-content-center py-3">
@@ -61,7 +59,7 @@
                             <label>Correo electrónico</label>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="correo" id="correo">
                         </div>
                     </div>
                     <div class="row g-3 justify-content-center py-3">
@@ -71,7 +69,7 @@
                     </div>
                     <div class="row g-3 justify-content-center py-1">
                         <div class="col-7 align-self-center">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" name="mensaje" id="mensaje"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary mb-3">Enviar</button>
