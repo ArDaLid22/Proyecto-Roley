@@ -4,9 +4,7 @@
 <head>
 	<title>Roley Store</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!--link rel="stylesheet" href="css/all.css"-->
-	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<?php include "store/storeHeader.php"; ?>
 </head>
 
 <body>
@@ -29,6 +27,9 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="store/contacto.php">Contáctanos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Inicia Sesión</a>
 				</li>
 			</ul>
 		</div>

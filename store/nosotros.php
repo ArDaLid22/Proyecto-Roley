@@ -4,8 +4,7 @@
 <head>
 	<title>Roley Store - Sobre Nosotros</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<?php include "storeHeader.php"; ?>
 </head>
 
 <body>
