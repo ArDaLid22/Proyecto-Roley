@@ -1,38 +1,16 @@
-<?php 
+<?php session_start();
+
  require '../Modelos/Usuario.php';
  require 'StartertController.php';
- $ics = new StartertController();
+
 
  
 
  
 class UsuarioControlador extends Usuario{
 
-       public function AlistarDatos($nombre,$apellido,$usuario,$correo,$telefono,$contraseña,$fecharegistro,$estado)
-    {
-        $this->nombre = $nombre;
-          $this->apellido= $apellido;
-          $this->usuario=$usuario;
-          $this->correo=$correo;
-          $this->telefono=$telefono;
-          $this->contraseña=$contraseña;
-          $this->fecharegistro=$fecharegistro;
-          $this->estado=$estado;
-        
-    }
-    
-      public function VerifyLogin($usuario,$contraseña){
-        $this->usuario=$usuario;
-        $this->contraseña=$contraseña;
-        $infousuario = $this->SearchUsuarioForName();
-        foreach($infousuario as $usuario){}
-         var_dump($usuario);
-    
-        
-      }
-     
 
-
+    
     
     public function MostrarLogin(){
         include_once '../Vistas/Usuario/login.php';
@@ -41,23 +19,64 @@ class UsuarioControlador extends Usuario{
     public function RegistroView(){
         require '../Vistas/Usuario/registrate.php';
     }
+    public function MostrarHome(){
+        require '../Vistas/store/Home.php';
+    }
 
     public function InicioView(){
         require '../Vistas/Usuario/inicio.php';
     }
 
     public function Redirect(){
-        header("location: ../");
+        header("location:../");
     }
 
     public function RedirectLogin(){
         header("location: UsuarioControlador.php?action=login");
     }
 
+    public function RedirectHome(){
+        header("location: UsuarioControlador.php?action=home");
+    }
+    
+    public function AlistarDatos($nombre,$password,$direccion,$telefono)
+    {
+        $this->nombre = $nombre;
+        $this->apellido= $password;
+        $this->direccion=$direccion;
+        $this->telefono=$telefono;  
+        $this->InsertUsuario();   
+    }
+    
+    
+    public function VerificarLogin($nombre,$apellido){
+        $this->nombre=$nombre;
+        $this->apellido=$apellido;
+        //SE USA EL METODO CONSULTARUSUARIO EN USUARIO DONDE SE CONSULTA BD
+        $usuario = $this->consultarUsuario();
+        if($usuario=="sindatos"){
+            $_SESSION['error'] = "No se encontro ese usuario en Nuestra BD";
+            $this->RedirectLogin();
+        } else {
+            if(password_verify($this->apellido,$usuario->apellido)){
+                $_SESSION['nombre'] = $usuario -> nombre;
+                $_SESSION['direccion'] = $usuario -> direccion;
+                $_SESSION['telefono']= $usuario-> telefono;
+                unset($_SESSION['error']);
+                $this->RedirectHome();
+                
+            }else{
+                $_SESSION['error']="Contraseña Incorrecta, Por favor inicie NuEVAMENTE";
+                $this->RedirectLogin();
+            }
+        }
+         
+      }
+
  
 
 }
-
+//VISTAS GET
 if(isset($_GET['action']) && $_GET['action']=='login'){
     $instanciacontrolador = new UsuarioControlador();
     $instanciacontrolador-> MostrarLogin();
@@ -67,22 +86,29 @@ if(isset($_GET['action']) && $_GET['action']=='registrate'){
     $instanciacontrolador = new UsuarioControlador();
     $instanciacontrolador-> RegistroView();
 }
-
-if(isset($_POST['action']) && $_POST['action']=='insertar'){
+if(isset($_GET['action']) && $_GET['action']=='home'){
     $instanciacontrolador = new UsuarioControlador();
-    $instanciacontrolador-> AlistarDatos($_POST['nombre'],$_POST['apellido'],$_POST['usuario'],$_POST['correo'],$_POST['fecharegistro'],$_POST['contraseña'],
-    $_POST['telefono'],$_POST['estado']);
+    $instanciacontrolador-> MostrarHome();
 }
 
+//ACCIONES POST
+if(isset($_POST['action']) && $_POST['action']=='insertar'){
+    $password = password_hash($_POST['Apellido'],PASSWORD_BCRYPT);
+   
+    
+    $instanciacontrolador = new UsuarioControlador();
+    $instanciacontrolador-> AlistarDatos($_POST['Nombre'],$password,
+    $_POST['Direccion'],$_POST['Telefono']);
 
+}
 
 if(isset($_POST['action']) && $_POST['action']=='login'){
     $instanciacontrolador = new UsuarioControlador();
-    $instanciacontrolador -> VerifyLogin($_POST['usuario'],$_POST['contraseña']);
+    $instanciacontrolador -> VerificarLogin($_POST['Nombreusu'],$_POST['Apellidousu']);
 }
   
 
-//INSERTAR DATOS A DB ->>
+//GUARDAR DATOS CAJAS DE TEXTO ->>
   if(isset($_POST['action']) && $_POST['action']== 'insert'){
       $instanciacontrolador = new UsuarioControlador();
       $password = password_hash($_POST['contraseña'],PASSWORD_ARGON2I);
@@ -92,53 +118,9 @@ if(isset($_POST['action']) && $_POST['action']=='login'){
           $_POST['usuario'],
           $password, 
           $_POST['correo'],
-          $_POST['telefono'],
-          $_POST['fecharegistro'],
-          $_POST['estado'],
+ 
                  
       );
   }
 
- if(isset($_POST['action']) && $_POST['action']=='login'){
-     $instanciacontrolador = new UsuarioControlador();
-     $instanciacontrolador-> VerifyLogin($_POST['usuario'],$_POST['contraseña']);
- }
-
-      // ---- TRABAJO CON SESIONES----
-      
-    //   public function VerificarLogin($usuario,$contraseña){
-    //     $this->usuario=$usuario;
-    //      $this->contraseña=$contraseña;
-    //      $usuario = $this->consultarUsuario();
-    //      if($usuario=="sindatos"){
-    //         $_SESSION['error'] = "No se encontro ese usuario en Nuestra BD";
-    //         $this->RedirectLogin();
-    //      }else{
-    //         if(password_verify($contraseña,$usuario->contraseña)){
-    //             $SESSION['NOMBRE'] = $usuario->nombre;
-    //             $SESSION['APELLIDO'] = $usuario->apellido;            
-    //             $SESSION['FECHA_REGISTRO_USUARIO'] = $usuario->fecharegistro;
-    //             $SESSION['ESTADO_USUARIO'] = $usuario-> estado;
-    //             $SESSION['CORREO'] = $usuario-> correo;
-    //             $SESSION['TELEFONO'] = $usuario ->telefono;
-    //             unset($_SESSION['error']);
-    //             $this ->Redirect();
-         
-    //         }else{
-    //             $_SESSION['error'] = "Contraseña Incorrecta, Por favor inicie Nuevamente";
-    //             $this->RedirectLogin();
-    //         }
-    //      }
-    //   }
-    // if(password_verify($contraseña,$usuario->CONTRASEÑA)){
-    //     echo "La contraseña es correcta";
-    // }else{
-    //     echo " La contraseña es incorrecta";
-    // }
-
-
-    // if(isset($_POST['action']) && $_POST['action']=='login'){
-//     $instanciacontrolador = new UsuarioControlador();
-//     $instanciacontrolador -> VerificarLogin($_POST['usuario'],$_POST['contraseña']);
-// }
 ?>

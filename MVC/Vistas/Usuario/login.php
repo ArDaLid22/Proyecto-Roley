@@ -1,53 +1,47 @@
-<?php
-
-include_once '../Menu/HeaderLogin.php';
-
+<?php 
+        echo $_SESSION['error'];
 ?>
-<body class="img js-fullheight" style="background-image: url(../Vistas/images/bg.jpg);">
-		<section class="ftco-section">
-			<div class="container login-wrapper">
-				<div class="row justify-content-center">
-					<div class="col-md-6 text-center mb-5 login-wrapper">
-						<h2 class="heading-section">LOGIN</h2>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-md-6 col-lg-4">
-						<div class="login-wrap p-0">
 
-							<form action="UsuarioControlador.php" id="login" method="POST" class="signin-form">
-								<div class="form-group">
-									<input type="hidden" name="action" value="login">
-									<input type="text" class="form-control" placeholder="USUARIO"  name="usuario" id="usuario" required>
-								</div>
-								<div class="form-group">
-									<input id="password-field" type="password" class="form-control" placeholder="CONTRASEÑA"  name="contraseña" id="contraseña" required>
-									<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-								</div>
-								<div class="form-group">
-									
-									<button type="submit" class="form-control btn btn-primary submit px-3">INGRESAR</button>
-								</div>
-								<div class="form-group d-md-flex">	
-									<p class="w-100 text-center" ><a href="../Controladores/UsuarioControlador.php?action=registrate">REGISTRATE</a></p>
-									<p class="w-100 text-center" href="REGISTRATE.html"><a href="">RECUPERAR CONTRASEÑA</a></p>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Login Admin</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <!-- FontAwesome Icons -->
+        <script src="https://kit.fontawesome.com/8ef4f0069f.js" crossorigin="anonymous"></script>
+        <style>
+            .cuadro {
+                height: 900px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container cuadro d-flex justify-content-center align-items-center">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div><img src="../imagenes/logo.png" class="card-img-top w-50"></div><br>
+                    <h3>Inicia Sesión</h3>
+                    <hr />
+                    <form method="post" action="UsuarioControlador.php">
+                        <div class="form-group">
+                            <input type="hidden" name="action" value="login">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" placeholder="Usuario" id="Nombreusu" name="Nombreusu">
+                        </div>
+                        <div class="form-group py-2">
+                            <label>Apellido</label>
+                            <input type="password" class="form-control" placeholder="Contraseña" id="Apellidousu" name="Apellidousu">
+                        </div>            
+                        <div class="py-2"><button type="submit" class="btn btn-primary">Ingresar</button></div>        
+                    </form>
 
-								</div>
-							</form>
-						</div>
-					</div>
-		</section>
-
-        <?php
-            include_once '../Menu/FooterLogin.php';
-        ?>
-	
-
-		<script src="js/jquery.min.js"></script>
-		<script src="js/popper.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
-
-
-</body>
+                    <div class="py-2"><a href="UsuarioControlador.php?action=registrate"><button type="submit" class="btn btn-primary">Registrate</button></a></div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

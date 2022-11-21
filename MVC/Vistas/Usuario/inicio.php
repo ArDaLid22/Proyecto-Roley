@@ -1,6 +1,6 @@
 <?php
 require '../../Modelos/conexion.php';
-$instanciaconexion = new conexion();
+$instanciaconexion = new conexion1();
 if(empty($_SESSION['email'])){
     header("location:../usuarios/login.php");
 }

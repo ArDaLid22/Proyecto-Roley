@@ -1,22 +1,12 @@
 <?php
-class conexion{
+$dbuser = "root";
+$dbpass = "";
+$dbhost = "localhost";
+$dbname = "roleyDB";
 
-    public $db;
+$conexion = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
-    
-    public function __construct(){
-       
-        $usuario = 'root';
-        $contraseña= '';
-        try{
-            $this->db = new PDO('mysql:host=localhost;dbname=kiposh',$usuario,$contraseña);
-        } catch (PDOException $e){
-            echo "Error : " . $e->getMessage();
-        }
-  
-    }
-    public function cerrarconexion(){
-        $this->db  = null;
-    }
+if ($conexion->connect_error) {
+    die ("Conexion fallida: ".$conexion->connect_error);
 }
 ?>
