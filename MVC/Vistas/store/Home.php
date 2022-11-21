@@ -14,22 +14,19 @@
 		<div class="container py-2">
 			<ul class="nav nav-pills justify-content-end">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="../store/Home.php">Inicio</a>
+					<a class="nav-link active" aria-current="page" href="../Controladores/UsuarioControlador.php?action=home">Inicio</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/productos.php">Productos</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=productos">Productos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/ofertas.php">Ofertas</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=ofertas">Ofertas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/nosotros.php">Sobre Nosotros</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=nosotros">Sobre Nosotros</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/contacto.php">Contáctanos</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Inicia Sesión</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=contacto">Contáctanos</a>
 				</li>
 			</ul>
 		</div>
@@ -39,13 +36,13 @@
 	<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active" data-bs-interval="10000">
-				<a href="store/ofertas.php"><img src="imagenes/off1.png" class="d-block w-100"></a>
+				<a href="store/ofertas.php"><img src="../Vistas/imagenes/off1.png" class="d-block w-100"></a>
 			</div>
 			<div class="carousel-item" data-bs-interval="2000">
 				<a href="store/ofertas.php"><img src="../Vistas/imagenes/off2.png" class="d-block w-100"></a>
 			</div>
 			<div class="carousel-item">
-				<a href="store/ofertas.php"><img src="imagenes/off3.png" class="d-block w-100"></a>
+				<a href="store/ofertas.php"><img src="../Vistas/imagenes/off3.png" class="d-block w-100"></a>
 			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
@@ -67,7 +64,7 @@
 	<div class="container bg-light">
 		<div class="row">
 			<?php
-				include "../../Modelos/conexion.php";
+				include "../Modelos/conexion.php";
 				$sql = $conexion->query("select * from producto");
 				while ($datos = $sql->fetch_object()) { ?>
 					<div class="col-4 py-2">
@@ -93,18 +90,18 @@
 			<div class="row justify-content-between">
 				<div class="col-4">
 					<div class="h5">Nuestras redes</div>
-					<a href="https://www.instagram.com/roley_peru/" target="_blank"><img src="iconos/instagram.png" class="w-25"></a>
+					<a href="https://www.instagram.com/roley_peru/" target="_blank"><img src="../Vistas/iconos/instagram.png" class="w-25"></a>
 				</div>
 				<div class="col-4">
 					<div class="h5">Contáctanos</div>
-					<a href="https://api.whatsapp.com/send?phone=51994964790&text=Hola,%20quiero%20consultar%20los%20productos." target="_blank"><img src="iconos/whatsapp.png" class="w-25"></a>
+					<a href="https://api.whatsapp.com/send?phone=51994964790&text=Hola,%20quiero%20consultar%20los%20productos." target="_blank"><img src="../Vistas/iconos/whatsapp.png" class="w-25"></a>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- ChatBot -->
-	<?php include "../../Vistas/store/chatbot.php"; ?>
+	<?php include "chatbot.php"; ?>
 
 </body>
 

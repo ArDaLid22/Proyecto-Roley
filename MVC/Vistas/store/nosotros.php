@@ -14,19 +14,19 @@
 		<div class="container py-2">
 			<ul class="nav nav-pills justify-content-end">
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="../store/Home.php">Inicio</a>
+					<a class="nav-link active" aria-current="page" href="../Controladores/UsuarioControlador.php?action=home">Inicio</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/productos.php">Productos</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=productos">Productos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/ofertas.php">Ofertas</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=ofertas">Ofertas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="../store/nosotros.php">Sobre Nosotros</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=nosotros">Sobre Nosotros</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../store/contacto.php">Contáctanos</a>
+					<a class="nav-link" href="../Controladores/UsuarioControlador.php?action=contacto">Contáctanos</a>
 				</li>
 			</ul>
 		</div>
@@ -43,7 +43,7 @@
                 </div>
               </div>
               <div class="col-md-5">
-                <img src="../imagenes/logo.png" class="rounded">
+                <img src="../Vistas/imagenes/logo.png" class="rounded">
               </div>
             </div>
           </div>
@@ -67,18 +67,18 @@
 			<div class="row justify-content-between">
 				<div class="col-4">
 					<div class="h5">Nuestras redes</div>
-					<a href="https://www.instagram.com/roley_peru/" target="_blank"><img src="../iconos/instagram.png" class="w-25"></a>
+					<a href="https://www.instagram.com/roley_peru/" target="_blank"><img src="../Vistas/iconos/instagram.png" class="w-25"></a>
 				</div>
 				<div class="col-4">
 					<div class="h5">Contáctanos</div>
-					<a href="https://api.whatsapp.com/send?phone=51994964790&text=Hola,%20quiero%20consultar%20los%20productos." target="_blank"><img src="../iconos/whatsapp.png" class="w-25"></a>
+					<a href="https://api.whatsapp.com/send?phone=51994964790&text=Hola,%20quiero%20consultar%20los%20productos." target="_blank"><img src="../Vistas/iconos/whatsapp.png" class="w-25"></a>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- ChatBot -->
-	<?php include "../../Vistas/store/chatbot.php"; ?>
+	<?php include "chatbot.php"; ?>
 
 </body>
 

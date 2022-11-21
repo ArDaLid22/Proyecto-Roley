@@ -1,7 +1,3 @@
-<?php 
-        echo $_SESSION['error'];
-?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -23,23 +19,20 @@
         <div class="container cuadro d-flex justify-content-center align-items-center">
             <div class="card text-center shadow-sm">
                 <div class="card-body">
-                    <div><img src="../Vistas/imagenes/logo.png" class="card-img-top w-50"></div><br>
+                    <div><img src="../imagenes/logo.png" class="card-img-top w-50"></div><br>
                     <h3>Inicia Sesión</h3>
                     <hr />
-                    <form method="post" action="UsuarioControlador.php">
+                    <form method="post" action="../bd/loginAdmin.php">
                         <div class="form-group">
-                            <input type="hidden" name="action" value="login">
-                            <label>Nombre</label>
-                            <input type="text" class="form-control" placeholder="Usuario" id="Nombreusu" name="Nombreusu">
+                            <label>Dirección de Correo Electrónico</label>
+                            <input type="email" class="form-control" placeholder="Correo" id="emailID" name="emailID">
                         </div>
                         <div class="form-group py-2">
                             <label>Contraseña</label>
-                            <input type="password" class="form-control" placeholder="Contraseña" id="Apellidousu" name="Apellidousu">
-                        </div>            
-                        <div class="py-2"><button type="submit" class="btn btn-primary">Ingresar</button></div>        
+                            <input type="password" class="form-control" placeholder="Contraseña" id="passID" name="passID">
+                        </div>
+                        <div class="py-2"><button type="submit" class="btn btn-primary">Ingresar</button></div>
                     </form>
-
-                    <div class="py-2"><a href="UsuarioControlador.php?action=registrate"><button type="submit" class="btn btn-primary">Registrate</button></a></div>
                 </div>
             </div>
         </div>

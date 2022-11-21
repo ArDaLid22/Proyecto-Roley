@@ -2,7 +2,7 @@
 $dbuser = "root";
 $dbpass = "";
 $dbhost = "localhost";
-$dbname = "roleyDB";
+$dbname = "roleydb";
 
 $conexion = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 

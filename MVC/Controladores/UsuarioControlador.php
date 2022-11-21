@@ -19,8 +19,20 @@ class UsuarioControlador extends Usuario{
     public function RegistroView(){
         require '../Vistas/Usuario/registrate.php';
     }
+    public function MostrarProducto(){
+        require '../Vistas/store/productos.php';
+    }
+    public function MostrarOfertas(){
+        require '../Vistas/store/ofertas.php';
+    }
     public function MostrarHome(){
         require '../Vistas/store/Home.php';
+    }
+    public function Mostrarnosotros(){
+        require '../Vistas/store/nosotros.php';
+    }
+    public function Mostrarcontactanos(){
+        require '../Vistas/store/contacto.php';
     }
 
     public function InicioView(){
@@ -89,6 +101,22 @@ if(isset($_GET['action']) && $_GET['action']=='registrate'){
 if(isset($_GET['action']) && $_GET['action']=='home'){
     $instanciacontrolador = new UsuarioControlador();
     $instanciacontrolador-> MostrarHome();
+}
+if(isset($_GET['action']) && $_GET['action']=='productos'){
+    $instanciacontrolador = new UsuarioControlador();
+    $instanciacontrolador-> MostrarProducto();
+}
+if(isset($_GET['action']) && $_GET['action']=='ofertas'){
+    $instanciacontrolador = new UsuarioControlador();
+    $instanciacontrolador-> MostrarOfertas();
+}
+if(isset($_GET['action']) && $_GET['action']=='nosotros'){
+    $instanciacontrolador = new UsuarioControlador();
+    $instanciacontrolador-> Mostrarnosotros();
+}
+if(isset($_GET['action']) && $_GET['action']=='contacto'){
+    $instanciacontrolador = new UsuarioControlador();
+    $instanciacontrolador-> Mostrarcontactanos();
 }
 
 //ACCIONES POST
