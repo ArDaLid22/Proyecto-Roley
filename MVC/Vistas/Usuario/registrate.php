@@ -21,8 +21,8 @@
         <div class="container cuadro d-flex justify-content-center align-items-center">
             <div class="card text-center shadow-sm">
                 <div class="card-body">
-                    <div><img src="../imagenes/logo.png" class="card-img-top w-50"></div><br>
-                    <h3>Inicia Sesión</h3>
+                    <div><img src="../Vistas/imagenes/logo.png" class="card-img-top w-50"></div><br>
+                    <h3>Registrate</h3>
                     <hr />
                     <form method="post" action="UsuarioControlador.php">
                         <div class="form-group">
@@ -42,7 +42,7 @@
                             <label>Telefono</label>
                             <input type="number" class="form-control" placeholder="Ingrese telefono" id="Telefono" name="Telefono">
                         </div>
-                        <div class="py-2"><button type="submit" class="btn btn-primary">Registrate</button></div>
+                        <div class="py-2"><a href="UsuarioControlador.php?action=login"><button type="submit" class="btn btn-primary">Registrate</button></a></div>
                     
                     </form>
                 </div>
