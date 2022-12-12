@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -28,9 +32,24 @@
 				<li class="nav-item">
 					<a class="nav-link" href="store/contacto.php">Contáctanos</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Inicia Sesión</a>
-				</li>
+				<?php
+				if (!empty($_SESSION["clienteID"])) {
+				?>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hola <?php echo $_SESSION["nombre"] ?></a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="bd/controlLogoutCliente.php">Cerrar Sesión</a></li>
+						</ul>
+					</li>
+				<?php
+				} else {
+				?>
+					<li class="nav-item">
+						<a class="nav-link" href="store/loginCliente.php"><i class="fa-solid fa-user"></i> Inicia Sesión</a>
+					</li>
+				<?php
+				}
+				?>
 			</ul>
 		</div>
 	</div>
@@ -72,10 +91,16 @@
 				while ($datos = $sql->fetch_object()) { ?>
 					<div class="col-4 py-2">
 						<div class="card h-100">
-							<img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" class="img-card-top">
+						<div class="text-center" style="height: 300px;"><img src="data:image/jpg;base64, <?php echo base64_encode($datos->imagen); ?>" class="img-card-top h-100"></div>
 							<div class="card-body">
 								<h5 class="card-title"><?= $datos->nombre ?></h5>
-								<p class="card-text"><?= $datos->descripcion ?></p>
+								<?php
+								if (!empty($_SESSION["clienteID"])) {
+								?>
+									<p class="card-text"><?= $datos->descripcion ?></p>
+								<?php
+								}
+								?>
 							</div>
 							<div class="card-footer">
 								<small>Precio: <?= $datos->precio ?></small>

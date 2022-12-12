@@ -16,7 +16,16 @@
 </head>
 
 <div class="container-fluid bg-dark">
-    <div class="container text-center">
-        <a href="menuAdmin.php"><img src="../imagenes/logoAdmin.png" style="max-height: 50px;" class="my-3"></a>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <span></span>
+            <a href="menuAdmin.php"><img src="../imagenes/logoAdmin.png" style="max-height: 50px;" class="my-3"></a>
+            <!--div class="btn-group">
+                <button class="btn btn-warning dropdown-toogle" type="button" data-bs-toogle="dropdown" aria-expanded="false">Hola</button>
+                <ul class="dropdown-menu"-->
+                    <li class="text-danger"><a class="dropdown-item" href="../bd/logoutAdmin.php">Cerrar Sesión</a></li>
+                <!--/ul>
+            </div-->
+        </div>
     </div>
 </div>

@@ -1,4 +1,12 @@
-<?php include "adminHeader.php"; ?>
+<?php
+session_start();
+
+if (empty($_SESSION["nombre"])) {
+    header("location: index.php");
+}
+
+include "adminHeader.php";
+?>
 
 <body>
     <div class="container">
@@ -14,7 +22,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-4 my-3">
+            <!--div class="col-4 my-3">
                 <a href="adminPedidos.php" style="text-decoration:none" class="text-reset">
                     <div class="card h-100">
                         <img src="../imagenes/adminPedidos.png" class="card-img-top">
@@ -24,7 +32,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div-->
             <div class="col-4 my-3">
                 <a href="adminClientes.php" style="text-decoration:none" class="text-reset">
                     <div class="card h-100">

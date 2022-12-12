@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Login Admin</title>
+        <title>Login Cliente</title>
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
@@ -31,8 +31,8 @@
                             <label>Contraseña</label>
                             <input type="password" class="form-control" placeholder="Contraseña" id="passID" name="passID">
                         </div>
-                        <div class="text-danger"><?php include "../bd/loginAdmin.php" ?></div>
-                        <div class="py-2"><input type="submit" name="logAdmin" class="btn btn-primary" value="Ingresar"></div>
+                        <div class="text-danger"><?php include "../bd/controlLoginCliente.php" ?></div>
+                        <div class="py-2"><input type="submit" name ="btnlogin" class="btn btn-primary" value="Ingresar"></div>
                     </form>
                 </div>
             </div>

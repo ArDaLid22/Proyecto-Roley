@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -28,6 +32,24 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="../store/contacto.php">Contáctanos</a>
                 </li>
+                <?php
+				if (!empty($_SESSION["clienteID"])) {
+				?>
+                    <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hola <?php echo $_SESSION["nombre"] ?></a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="../bd/controlLogoutCliente.php">Cerrar Sesión</a></li>
+						</ul>
+					</li>
+				<?php
+				} else {
+				?>
+					<li class="nav-item">
+						<a class="nav-link" href="loginCliente.php"><i class="fa-solid fa-user"></i> Inicia Sesión</a>
+					</li>
+				<?php
+				}
+				?>
             </ul>
         </div>
     </div>
