@@ -75,10 +75,10 @@ session_start();
         <div class="container py-5">
             <div class="text-center">
                 <h5 class="card-title">MISIÓN</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Ser una empresa que se desarrolle de forma confiable, segura, sólida, flexible y rentable, construyendo a la satisfacción de las necesidades de nuestros compradores de nuestros productos.</p>
                 <br>
                 <h5 class="card-title">VISIÓN</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Proporcionar al mercado de Lima , de manera eficiente los productos que tenemos a la venta, velando siempre que sean productos de alta calidad, con el propósito de satisfacer con la necesidad del cliente.</p>
             </div>
         </div>
     </div>
